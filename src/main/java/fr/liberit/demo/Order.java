@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.TenantId;
 
 @Entity
 @Getter
@@ -20,6 +21,9 @@ public class Order {
 
 
     private String name;
+
+    @TenantId
+    private String tenant;
 
     // Constructors
     public Order() {}
